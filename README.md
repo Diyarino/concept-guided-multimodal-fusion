@@ -75,7 +75,23 @@ where $\ell$ is typically the mean squared error (MSE) or another appropriate di
 
 ## 🧠 Concept-guided Multimodal Fusion
 
-work in progress...
+Our model uses a **concept-aware fusion module** that adaptively integrates features from different modalities using attention, dual fusion strategies, and residual refinement. This allows for robust and interpretable feature integration across noisy or partially missing inputs.
+
+* **Concept Attention:**
+  A learnable attention mechanism dynamically weighs modality contributions based on their contextual relevance. This enables the model to prioritize the most informative inputs during fusion, supporting interpretability and robustness.
+
+* **Joint & Marginal Fusion:**
+  We combine two fusion paths — *mean* (shared signal) and *max* (dominant signal) — using a soft weighting guided by the attention vector. This lets the model adaptively balance between cooperation and contrast across modalities:
+
+  $$
+  \mathbf{f} = \mathbf{a} \odot \frac{\mathbf{z}_1 + \mathbf{z}_2}{2} + (1 - \mathbf{a}) \odot \max(\mathbf{z}_1, \mathbf{z}_2)
+  $$
+
+* **Residual Projection & Normalization:**
+  To preserve modality-specific information, residual connections from the original encodings are added back into the fused representation and normalized. This enhances training stability and supports gradient flow, ensuring both shared and individual features are retained.
+
+Together, these mechanisms enable the fusion block to adapt to varying input quality, enforce semantic alignment, and maintain robustness under challenging multimodal scenarios.
+
 
 ## 📊 Multimodal Robot Kinematic Datasets
 
