@@ -20,6 +20,9 @@ The Multimodal Concept Fusion Autoencoder architecture is designed to handle mul
   <img src="https://github.com/Diyarino/concept-guided-multimodal-fusion/blob/6ba71050185c595592a58ab8fed63f5b153cca29/multimodal_autoencoder.png" alt="Multimodal Concept Fusion Autoencoder" width="600"/>
 </p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually[^1].
 
+
+
+
 Below is a formal mathematical description of the framework:
 
 ---
