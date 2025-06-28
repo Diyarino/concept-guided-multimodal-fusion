@@ -91,23 +91,17 @@ $$\mathbf{f} = \mathbf{a} \odot \frac{\mathbf{z}_1 + \mathbf{z}_2}{2} + (1 - \ma
 Together, these mechanisms enable the fusion block to adapt to varying input quality, enforce semantic alignment, and maintain robustness under challenging multimodal scenarios.
 
 
-## 📊 Multimodal Robot Kinematic Datasets
+## 🔗 Multimodal Robot Kinematic Datasets
 
-This repository provides access to three multimodal robot movement datasets, each including at a minimum the **camera** and **kinematics** modalities. These datasets were used and described in detail in our accompanying research paper.
+This repository provides access to three multimodal robot movement datasets, each including at a minimum the **camera** and **kinematics** modalities. For detailed descriptions of the datasets, data collection procedures, and experimental use cases, please refer to our paper [2]:
 
-### 🔗 Datasets
+**"Performance benchmarking of multimodal data-driven approaches in industrial settings"** – [Link to Paper](https://www.sciencedirect.com/science/article/pii/S266682702500074X?via%3Dihub)
 
 1. **MuJoCo: UR5 Robot Motion** – [Link to Dataset 1](https://zenodo.org/records/14041622)
 2. **ABB Studio: Single Robot Welding Station** – [Link to Dataset 2](https://zenodo.org/records/14041488)
 3. **ABB Studio: Dual Robot Welding Station** – [Link to Dataset 3](https://zenodo.org/records/14041416)
 
 Each dataset captures robot motion across various tasks and environments, providing synchronized data streams for machine learning and robotics research.
-
-### 📄 Reference Paper
-
-For detailed descriptions of the datasets, data collection procedures, and experimental use cases, please refer to our paper [2]:
-
-**"Performance benchmarking of multimodal data-driven approaches in industrial settings"** – [Link to Paper](https://www.sciencedirect.com/science/article/pii/S266682702500074X?via%3Dihub)
 
 
 ## 📊 Results
