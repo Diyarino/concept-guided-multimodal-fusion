@@ -8,9 +8,14 @@ The architecture not only detects anomalies as part of its core functionality bu
 
 We validate our approach on three synthetic but industrially inspired multimodal datasets, each simulating realistic sensor failures using strategic data augmentations. The results highlight the method’s ability to remain robust and informative in the face of corrupted or incomplete inputs.
 
-## Prerequisites
-- Python 3.6+
-- PyTorch 1.0+
+### 📦 Prerequisites
+
+Before you begin, ensure your environment meets the following requirements:
+
+* **Python** ≥ 3.6
+* **PyTorch** ≥ 1.0 (CUDA support recommended for faster training)
+
+We also recommend using a virtual environment (e.g., `venv` or `conda`) to avoid package conflicts.
 
 ## 🔧 Multimodal Autoencoder
 
@@ -72,7 +77,7 @@ where $\ell$ is typically the mean squared error (MSE) or another appropriate di
 
 ## Concept-guided Multimodal Fusion
 
-Classification
+work in progress...
 
 ## 📊 Multimodal Robot Kinematic Datasets
 
@@ -95,19 +100,24 @@ For detailed descriptions of the datasets, data collection procedures, and exper
 
 ## Results
 
-following figures show the elements and the full NLRL.
+work in progress...
 
 
-## Anomaly detection
+### 🚨 Anomaly Detection via Concept Scores
 
+Anomaly detection in our framework is performed using the **concept scores** derived from the unified latent representation. After fusing modality-specific embeddings into the shared concept vector $\mathbf{z}_c$, we compute a **concept score** that quantifies which aggregation function is used with the learned concept space. High concept scores indicate joint information, and low scores indicate marginal information. This allows the model to detect irregularities, enhancing robustness in real-world industrial scenarios. The failure injection is based on our pre-work [3].
 
-![til](https://raw.githubusercontent.com/hashrocket/hr-til/master/app/assets/images/banner.png)
+![til](animation_single.gif)
+
+![til](animation_multi.gif)
 
 ## References 
 
 <a id="1">[1]</a> Altinses, D., & Schwung, A. (2023, October). Multimodal Synthetic Dataset Balancing: A Framework for Realistic and Balanced Training Data Generation in Industrial Settings. In IECON 2023-49th Annual Conference of the IEEE Industrial Electronics Society (pp. 1-7). IEEE.
 
 <a id="2">[2]</a> Altinses, D., & Schwung, A. (2025, June). Performance benchmarking of multimodal data-driven approaches in industrial settings. In Machine Learning with Applications (pp. 1-7). Volume 21, 100691, ISSN 2666-8270.
+
+<a id="3">[3]</a> Altinses, D., & Schwung, A. (2023, October). Multimodal Synthetic Dataset Balancing: A Framework for Realistic and Balanced Training Data Generation in Industrial Settings. In IECON 2023-49th Annual Conference of the IEEE Industrial Electronics Society (pp. 1-7). IEEE.
 
 
 
