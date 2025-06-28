@@ -98,6 +98,8 @@ For detailed descriptions of the datasets, data collection procedures, and exper
 
 ## 📊 Results
 
+We evaluated our approach on three synthetically constructed but industrially realistic multimodal datasets, each simulating various failure modes such as sensor dropouts, signal noise, and modality corruption.
+
 work in progress...
 
 
