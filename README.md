@@ -83,9 +83,7 @@ Our model uses a **concept-aware fusion module** that adaptively integrates feat
 * **Joint & Marginal Fusion:**
   We combine two fusion paths — *mean* (shared signal) and *max* (dominant signal) — using a soft weighting guided by the attention vector. This lets the model adaptively balance between cooperation and contrast across modalities:
 
-  $$
-  \mathbf{f} = \mathbf{a} \odot \frac{\mathbf{z}_1 + \mathbf{z}_2}{2} + (1 - \mathbf{a}) \odot \max(\mathbf{z}_1, \mathbf{z}_2)
-  $$
+$$\mathbf{f} = \mathbf{a} \odot \frac{\mathbf{z}_1 + \mathbf{z}_2}{2} + (1 - \mathbf{a}) \odot \max(\mathbf{z}_1, \mathbf{z}_2)$$
 
 * **Residual Projection & Normalization:**
   To preserve modality-specific information, residual connections from the original encodings are added back into the fused representation and normalized. This enhances training stability and supports gradient flow, ensuring both shared and individual features are retained.
