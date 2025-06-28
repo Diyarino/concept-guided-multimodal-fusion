@@ -17,7 +17,7 @@ We validate our approach on three synthetic but industrially inspired multimodal
 The Multimodal Concept Fusion Autoencoder architecture is designed to handle multiple heterogeneous input modalities, encode them into latent spaces, aggregate these representations into a unified concept space, and then decode them back into the original modalities. The following figure illustrates the full flow of the Multimodal Concept Fusion Autoencoder:
 
 <p align="center">
-  <img src="path/to/your/image.png" alt="Multimodal Concept Fusion Autoencoder" width="600"/>
+  <img src="https://github.com/Diyarino/concept-guided-multimodal-fusion/blob/6ba71050185c595592a58ab8fed63f5b153cca29/multimodal_autoencoder.png" alt="Multimodal Concept Fusion Autoencoder" width="600"/>
 </p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually.
 
 > [Fig. 1 Base Citation Placeholder]
