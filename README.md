@@ -12,13 +12,13 @@ We validate our approach on three synthetic but industrially inspired multimodal
 - Python 3.6+
 - PyTorch 1.0+
 
-## Multimodal Autoencoder
+## 🔧 Multimodal Autoencoder
 
 The Multimodal Concept Fusion Autoencoder architecture is designed to handle multiple heterogeneous input modalities, encode them into latent spaces, aggregate these representations into a unified concept space, and then decode them back into the original modalities. The following figure illustrates the full flow of the Multimodal Concept Fusion Autoencoder:
 
 <p align="center">
   <img src="https://github.com/Diyarino/concept-guided-multimodal-fusion/blob/6ba71050185c595592a58ab8fed63f5b153cca29/multimodal_autoencoder.png" alt="Multimodal Concept Fusion Autoencoder" width="600"/>
-</p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually[^1].
+</p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually [1].
 
 
 
@@ -27,69 +27,87 @@ Below is a formal mathematical description of the framework:
 
 ---
 
-1. Encoder Stage
+#### **1. Encoder Stage**
 
-Let there be  input modalities , where each  corresponds to one modality.
+Let there be $M$ input modalities $\{ \mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_M \}$, where each $\mathbf{x}_m \in \mathbb{R}^{d_m}$ corresponds to one modality.
 
-Each modality  is passed through its own encoder , producing a latent representation:
+Each modality $\mathbf{x}_m$ is passed through its own encoder $E_m: \mathbb{R}^{d_m} \rightarrow \mathbb{R}^{k_m}$, producing a latent representation:
 
+$$
 \mathbf{z}_m = E_m(\mathbf{x}_m), \quad \text{for } m = 1, \dots, M
-
+$$
 
 ---
 
-2. Fusion Block (Concept-Level Aggregation)
+#### **2. Fusion Block (Concept-Level Aggregation)**
 
-The latent vectors  are then processed by a fusion function , which computes a unified concept representation :
+The latent vectors $\{ \mathbf{z}_1, \dots, \mathbf{z}_M \}$ are then processed by a **fusion function** $\mathcal{F}: \mathbb{R}^{k_1} \times \dots \times \mathbb{R}^{k_M} \rightarrow \mathbb{R}^{k_c}$, which computes a unified concept representation $\mathbf{z}_c$:
 
+$$
 \mathbf{z}_c = \mathcal{F}(\mathbf{z}_1, \dots, \mathbf{z}_M)
+$$
 
 This fusion block can be implemented using attention, contrastive regularization, or other learned mechanisms that adaptively weigh modality-specific features.
 
-
 ---
 
-3. Decoder Stage
+#### **3. Decoder Stage**
 
-The unified concept vector  is then used to reconstruct each modality via its corresponding decoder :
+The unified concept vector $\mathbf{z}_c$ is then used to reconstruct each modality via its corresponding decoder $D_m: \mathbb{R}^{k_c} \rightarrow \mathbb{R}^{d_m}$:
 
+$$
 \hat{\mathbf{x}}_m = D_m(\mathbf{z}_c), \quad \text{for } m = 1, \dots, M
+$$
 
 The goal is to minimize the total reconstruction loss across all modalities:
 
-\mathcal{L}_{\text{recon}} = \sum_{m=1}^{M} \ell(\mathbf{x}_m, \hat{\mathbf{x}}_m)
+$$
+\mathcal{L} = \sum_{m=1}^{M} \ell(\mathbf{x}_m, \hat{\mathbf{x}}_m)
+$$
 
-where  is typically the mean squared error (MSE) or another appropriate distance metric.
-
+where $\ell$ is typically the mean squared error (MSE) or another appropriate distance metric.
 
 
 
 
 ## Concept-guided Multimodal Fusion
 
-Classification of a Simple Finite State Machine based on trained Neural Logic Rule Layers.
+Classification
 
-## 02_Datasets
+## 📊 Multimodal Robot Kinematic Datasets
 
-descrption and link and citation and images
+This repository provides access to three multimodal robot movement datasets, each including at a minimum the **camera** and **kinematics** modalities. These datasets were used and described in detail in our accompanying research paper.
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/86289948/122931592-52dc5700-d36d-11eb-8a2f-eaba94ca60c3.PNG" alt="BGLP" width="600" height="420">
-</p>
+### 🔗 Datasets
+
+1. **MuJoCo: UR5 Robot Motion** – [Link to Dataset 1](https://zenodo.org/records/14041622)
+2. **ABB Studio: Single Robot Welding Station** – [Link to Dataset 2](https://zenodo.org/records/14041488)
+3. **ABB Studio: Dual Robot Welding Station** – [Link to Dataset 3](https://zenodo.org/records/14041416)
+
+Each dataset captures robot motion across various tasks and environments, providing synchronized data streams for machine learning and robotics research.
+
+### 📄 Reference Paper
+
+For detailed descriptions of the datasets, data collection procedures, and experimental use cases, please refer to our paper [2]:
+
+**"Performance benchmarking of multimodal data-driven approaches in industrial settings"** – [Link to Paper](https://www.sciencedirect.com/science/article/pii/S266682702500074X?via%3Dihub)
+
 
 ## Results
 
 following figures show the elements and the full NLRL.
 
-Basic blocks of NLRL       |  Full NLRL 
-:-------------------------:|:-------------------------:
-<img src="https://user-images.githubusercontent.com/86289948/123260158-89dd7480-d4f5-11eb-9fec-dd9fdf44bdea.jpg" alt="NLRL_blocks_LI" width="450" height="250">   |  <img src="https://user-images.githubusercontent.com/86289948/123260300-b2656e80-d4f5-11eb-82b1-cde0057440ee.PNG" alt="FullNLRL" width="450" height="200">
 
 ## Anomaly detection
 
 
+![til](https://raw.githubusercontent.com/hashrocket/hr-til/master/app/assets/images/banner.png)
+
 ## References 
 
-[^1] Altinses, D., & Schwung, A. (2023, October). Multimodal Synthetic Dataset Balancing: A Framework for Realistic and Balanced Training Data Generation in Industrial Settings. In IECON 2023-49th Annual Conference of the IEEE Industrial Electronics Society (pp. 1-7). IEEE.
+<a id="1">[1]</a> Altinses, D., & Schwung, A. (2023, October). Multimodal Synthetic Dataset Balancing: A Framework for Realistic and Balanced Training Data Generation in Industrial Settings. In IECON 2023-49th Annual Conference of the IEEE Industrial Electronics Society (pp. 1-7). IEEE.
+
+<a id="2">[2]</a> Altinses, D., & Schwung, A. (2025, June). Performance benchmarking of multimodal data-driven approaches in industrial settings. In Machine Learning with Applications (pp. 1-7). Volume 21, 100691, ISSN 2666-8270.
+
 
 
