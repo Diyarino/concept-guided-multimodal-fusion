@@ -18,11 +18,7 @@ The Multimodal Concept Fusion Autoencoder architecture is designed to handle mul
 
 <p align="center">
   <img src="https://github.com/Diyarino/concept-guided-multimodal-fusion/blob/6ba71050185c595592a58ab8fed63f5b153cca29/multimodal_autoencoder.png" alt="Multimodal Concept Fusion Autoencoder" width="600"/>
-</p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually.
-
-> [Fig. 1 Base Citation Placeholder]
-Please cite this figure appropriately or replace with your own diagram. A suggested placeholder is:
-"Adapted from internal architectural design for multimodal learning (Author, Year)"
+</p>Figure 1: Overview of the multimodal autoencoder architecture. Each modality is encoded separately, fused into a unified concept space, and decoded individually[^1].
 
 Below is a formal mathematical description of the framework:
 
@@ -89,5 +85,8 @@ Basic blocks of NLRL       |  Full NLRL
 ## Anomaly detection
 
 
+## References 
+
+[^1] Altinses, D., & Schwung, A. (2023, October). Multimodal Synthetic Dataset Balancing: A Framework for Realistic and Balanced Training Data Generation in Industrial Settings. In IECON 2023-49th Annual Conference of the IEEE Industrial Electronics Society (pp. 1-7). IEEE.
 
 
