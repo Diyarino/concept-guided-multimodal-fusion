@@ -73,9 +73,7 @@ $$
 where $\ell$ is typically the mean squared error (MSE) or another appropriate distance metric.
 
 
-
-
-## Concept-guided Multimodal Fusion
+## 🧠 Concept-guided Multimodal Fusion
 
 work in progress...
 
@@ -98,7 +96,7 @@ For detailed descriptions of the datasets, data collection procedures, and exper
 **"Performance benchmarking of multimodal data-driven approaches in industrial settings"** – [Link to Paper](https://www.sciencedirect.com/science/article/pii/S266682702500074X?via%3Dihub)
 
 
-## Results
+## 📊 Results
 
 work in progress...
 
