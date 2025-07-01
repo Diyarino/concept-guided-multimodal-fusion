@@ -10,9 +10,13 @@ The architecture not only detects anomalies as part of its core functionality bu
 
 Anomaly detection in our framework is performed using the **concept scores** derived from the unified latent representation. After fusing modality-specific embeddings into the shared concept vector $\mathbf{z}_c$, we compute a **concept score** that quantifies which aggregation function is used with the learned concept space. High concept scores indicate joint information, and low scores indicate marginal information. This allows the model to detect irregularities, enhancing robustness in real-world industrial scenarios. The failure injection is based on our pre-work [1].
 
-![til](animation_single.gif)
+<p align="center">
+  <img src="animation_single.gif" width="800" height="400" alt="til">
+</p>
 
-![til](animation_multi.gif)
+<p align="center">
+  <img src="animation_multi.gif" width="800" height="400" alt="til">
+</p>
 
 ### 📦 Prerequisites
 
