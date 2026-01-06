@@ -45,7 +45,7 @@ If you use this code or build upon our work, please cite our paper:
 
 ```bibtex
 @article{altinses2025fault,
-   author={Altinses, Diyar and Schwung, Andreas},
+  author={Altinses, Diyar and Schwung, Andreas},
   journal={IEEE Transactions on Artificial Intelligence}, 
   title={Fault-tolerant Multimodal Representations Learning: Fusion of Intermodal and Intramodal Correlations}, 
   year={2025},
